@@ -23,12 +23,13 @@ def save_weights(model, epoch, loss, err):
     weights_fname = 'weights-%d-%.3f-%.3f.pth' % (epoch, loss, err)
     weights_fpath = os.path.join(WEIGHTS_PATH, weights_fname)
     torch.save({
-            'startEpoch': epoch,
-            'loss':loss,
-            'error': err,
-            'state_dict': model.state_dict()
-        }, weights_fpath)
-    shutil.copyfile(weights_fpath, WEIGHTS_PATH+'latest.th')
+        'startEpoch': epoch,
+        'loss': loss,
+        'error': err,
+        'state_dict': model.state_dict()
+    }, weights_fpath)
+    shutil.copyfile(weights_fpath, WEIGHTS_PATH + 'latest.th')
+
 
 def load_weights(model, fpath):
     print("loading weights '{}'".format(fpath))
@@ -36,23 +37,26 @@ def load_weights(model, fpath):
     startEpoch = weights['startEpoch']
     model.load_state_dict(weights['state_dict'])
     print("loaded weights (lastEpoch {}, loss {}, error {})"
-          .format(startEpoch-1, weights['loss'], weights['error']))
+          .format(startEpoch - 1, weights['loss'], weights['error']))
     return startEpoch
 
+
 def get_predictions(output_batch):
-    bs,c,h,w = output_batch.size()
+    bs, c, h, w = output_batch.size()
     tensor = output_batch.data
     values, indices = tensor.cpu().max(1)
-    indices = indices.view(bs,h,w)
+    indices = indices.view(bs, h, w)
     return indices
+
 
 def error(preds, targets):
     assert preds.size() == targets.size()
-    bs,h,w = preds.size()
-    n_pixels = bs*h*w
+    bs, h, w = preds.size()
+    n_pixels = bs * h * w
     incorrect = preds.ne(targets).cpu().sum().type(torch.FloatTensor)
-    err = incorrect/n_pixels
-    return round(err.item(),5)
+    err = incorrect / n_pixels
+    return round(err.item(), 5)
+
 
 class LabelToLongTensor(object):
     def __call__(self, pic):
@@ -60,10 +64,15 @@ class LabelToLongTensor(object):
             # handle numpy array
             label = torch.from_numpy(pic).long()
         else:
-            label = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+            label = torch.ByteTensor(
+                torch.ByteStorage.from_buffer(
+                    pic.tobytes()))
             label = label.view(pic.size[1], pic.size[0], 1)
-            label = label.transpose(0, 1).transpose(0, 2).squeeze().contiguous().long()
+            label = label.transpose(
+                0, 1).transpose(
+                0, 2).squeeze().contiguous().long()
         return label
+
 
 def train(model, trn_loader, optimizer, criterion, epoch):
     model.train()
@@ -87,6 +96,7 @@ def train(model, trn_loader, optimizer, criterion, epoch):
     trn_error /= len(trn_loader)
     return trn_loss, trn_error
 
+
 def test(model, test_loader, criterion, epoch=1):
     model.eval()
     test_loss = 0
@@ -102,6 +112,7 @@ def test(model, test_loader, criterion, epoch=1):
     test_error /= len(test_loader)
     return test_loss, test_error
 
+
 def adjust_learning_rate(lr, decay, optimizer, cur_epoch, n_epochs):
     """Sets the learning rate to the initially
         configured `lr` decayed by `decay` every `n_epochs`"""
@@ -109,10 +120,12 @@ def adjust_learning_rate(lr, decay, optimizer, cur_epoch, n_epochs):
     for param_group in optimizer.param_groups:
         param_group['lr'] = new_lr
 
+
 def weights_init(m):
     if isinstance(m, nn.Conv2d):
         nn.init.kaiming_uniform(m.weight)
         m.bias.data.zero_()
+
 
 def predict(model, input_loader, n_batches=1):
     input_loader.batch_size = 1
@@ -123,8 +136,9 @@ def predict(model, input_loader, n_batches=1):
         label = Variable(target.cuda())
         output = model(data)
         pred = get_predictions(output)
-        predictions.append([input,target,pred])
+        predictions.append([input, target, pred])
     return predictions
+
 
 def view_sample_predictions(model, loader, n):
     inputs, targets = next(iter(loader))
