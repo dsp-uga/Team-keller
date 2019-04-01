@@ -1,7 +1,7 @@
 # Contributions
 (Ordered alphabetically)
 
-- **Dhaval Bhanderi** - [Chatrathabhishek](https://github.com/Chatrathabhishek)
+- **Dhaval Bhanderi** - [dvlbhanderi](https://github.com/dvlbhanderi)
    - 
    - 
    - 
@@ -11,14 +11,14 @@
     - 
     - 
 
-- **Sumer Singh** - [saedr](https://github.com/srs96)
+- **Sumer Singh** - [srs96](https://github.com/srs96)
    - 
    - 
    - 
    - 
    - 
    
-- **Yang Shi** - [vishcocity](https://github.com/YangAzure)
+- **Yang Shi** - [YangAzure](https://github.com/YangAzure)
    - 
    - 
    - 
