@@ -24,7 +24,7 @@ The following instructions will assist you get this project running on your loca
 
 ### Data Preparation:
 The training and testing data folders are available on GCP bucket: `gs://uga-dsp/project3` <br />
-Each of the training and test is a TIFF image, separated into 
+Training datasets are provided with ground truth labeled regions for identified neurons, and testing datasets are provided without ground truth. Each downloadable dataset includes metadata (as `JSON`), images (as `TIFF`), and coordinates of identified neurons, also known as ROIs (as `JSON`). Datasets are around 1 GB zipped and a few GBs unzipped. Visit the [neurofinder](https://github.com/codeneuro/neurofinder#datasets) repository for current download links for all datasets.
 
 Download these files into your project directory using gsutil:<br />
 `gsutil cp -r gs://uga-dsp/project2/* base_dir`
