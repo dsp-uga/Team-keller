@@ -16,20 +16,22 @@ The following instructions will assist you get this project running on any machi
     To install Python, go [here](https://www.python.org/downloads/)
     
 2. PyTorch: <br />
-    If you don't have it installed, [download Tensorflow here](https://www.tensorflow.org/install).
-(update for pytorch)
+    To install PyTorch, use
+    `pip3 install torch torchvision`
+    For more information, visit the [PyTorch website](https://pytorch.org/).
 
 3. [Thunder](https://github.com/thunder-project/thunder): <br />
-    `pip install thunder-python`
+    `pip install thunder-python` <br />
+    `pip install thunder-extraction` <br />
     
-4. [Google cloud platform](https://github.com/dsp-uga/Team-thweatt-p2/wiki/Google-Cloud-Platform-set-up)
+4. [Google cloud platform](https://cloud.google.com)
 
 ### Data Preparation:
 The training and testing data folders are available on GCP bucket: `gs://uga-dsp/project3` <br />
 Training datasets are provided with ground truth labeled regions for identified neurons, and testing datasets are provided without ground truth. Each downloadable dataset includes metadata (as `JSON`), images (as `TIFF`), and coordinates of identified neurons, also known as ROIs (as `JSON`). Datasets are around 1 GB zipped and a few GBs unzipped. Visit the [neurofinder](https://github.com/codeneuro/neurofinder#datasets) repository for current download links for all datasets.
 
 Download these files into your project directory using gsutil:<br />
-`gsutil cp -r gs://uga-dsp/project2/* base_dir`
+`gsutil cp -r gs://uga-dsp/project3/* base_dir`
 
 ### Run Instruction:
 
