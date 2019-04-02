@@ -29,7 +29,5 @@ for identities in os.listdir("./project3"):
                 continue
             dims = [512, 512]
             masks = array([tomask(s['coordinates']) for s in regions])
-            #s = regions[0]
-            # print(masks.sum(axis=0).shape)
             imsave('./train_anno/' + images[:16] + '.png', masks.sum(axis=0))
     print(identities)

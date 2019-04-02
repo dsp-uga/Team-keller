@@ -13,7 +13,6 @@ from models import tiramisu
 from scipy.misc import imread
 import utils.training as train_utils
 
-#CAMVID_PATH = Path('SegNet-Tutorial/CamVid')
 RESULTS_PATH = Path('.results/')
 WEIGHTS_PATH = Path('.weights/')
 RESULTS_PATH.mkdir(exist_ok=True)
@@ -31,7 +30,6 @@ class Dataset(data.Dataset):
     """
     Characterizes a dataset for PyTorch.
     """
-    'Characterizes a dataset for PyTorch'
 
     def __init__(self, list_IDs, labels):
         'Initialization'
@@ -69,16 +67,10 @@ class Dataset(data.Dataset):
         y = torch.unsqueeze(y, 0)
         return X, y
 
-
 train_set = Dataset(train_data, train_labels)
 train_loader = torch.utils.data.DataLoader(
     train_set, batch_size=batch_size, shuffle=False)
 
-'''
-inputs, targets = next(iter(train_loader))
-print("Inputs: ", inputs.size())
-print("Targets: ", targets.size())
-'''
 # Train
 
 LR = 1e-4
