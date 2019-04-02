@@ -12,11 +12,9 @@
     - 
 
 - **Sumer Singh** - [srs96](https://github.com/srs96)
-   - 
-   - 
-   - 
-   - 
-   - 
+   - Implemented and tuned NMF model
+   - Implemented Contrast Enhancement
+   - Contributed to Ethics, Readme and Wiki
    
 - **Yang Shi** - [YangAzure](https://github.com/YangAzure)
    - 
