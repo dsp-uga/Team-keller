@@ -43,25 +43,25 @@ Download these files into your project directory using gsutil:<br />
 
 data  
 --neurofinder.00.00.test <br />
---|--images <br />
+  |--images <br />
 --neurofinder.00.01.test <br />
---|--images <br />
+  |--images <br />
 ........... <br />
 ........... <br />
 --neurofinder.xx.xx.test <br />
---|--images <br />
+  |--images <br />
 
 * Output data will follow the below structure:
 
 edited_data <br />
 --neurofinder.00.00.test <br />
---|--images <br />
+  |--images <br />
 --neurofinder.00.01.test <br />
---|--images <br />
+  |--images <br />
 ........... <br />
 ........... <br />
 --neurofinder.xx.xx.test <br />
---|--images <br />
+  |--images <br />
 
 ### To run
 `contrast.py -d \<data directory>\ -s \<save location>\ -u \<upper_bound>\ -l \<lower_bound>\`
