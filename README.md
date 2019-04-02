@@ -63,6 +63,22 @@ edited_data <br />
 --neurofinder.xx.xx.test <br />
 --|--images <br />
 
+### To run
+`contrast.py -d \<data directory>\ -s \<save location>\ -u \<upper_bound>\ -l \<lower_bound>\`
+
+Required parameters:
+
+`<data directory>` Path to the data folder created as per the specifictions.
+
+Optional parameters:
+
+`<save location>` The location to save the output. Defaults to current working directory.
+
+`<upper_bound>` The upper bound for clipping. Defaults to 99.
+
+`<lower_bound>` The lower bound for clipping. Defaults to 3.
+
+
 ## nmf.py
 
 * Perfroms nmf, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Model-Approaches).
