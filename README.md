@@ -1,4 +1,5 @@
 # CSCI 8360 - Project 3 - Neuron Finding
+[![Deon badge](https://img.shields.io/badge/ethics%20checklist-deon-brightgreen.svg?style=popout-square)](http://deon.drivendata.org/)
 
 This project is implemented as a part of the Data Science Practicum (CSCI 8360) course at the University of Georgia, Spring 2019.
 The goal was to develop an image segmentation pipeline that identifies as many of the neurons present as possible, as accurately as possible.
@@ -7,7 +8,7 @@ Please refer [Wiki](https://github.com/dsp-uga/Team-keller/wiki) for more detail
 
 ## Getting Started 
 
-The following instructions will assist you get this project running on your local machine for developing and testing purpose.
+The following instructions will assist you get this project running on any machine for developing and testing purpose.
 
 ### Prerequisites:
 
@@ -17,9 +18,9 @@ The following instructions will assist you get this project running on your loca
 2. Tensorflow: <br />
     If you don't have it installed, [download Tensorflow here](https://www.tensorflow.org/install).
 
-3. Opencv: <br />
-    `pip install opencv-python` 
-
+3. [Thunder](https://github.com/thunder-project/thunder): <br />
+    `pip install thunder-python`
+    
 4. [Google cloud platform](https://github.com/dsp-uga/Team-thweatt-p2/wiki/Google-Cloud-Platform-set-up)
 
 ### Data Preparation:
@@ -54,18 +55,11 @@ One typical usage is:
 
 `$ python3 main.py --base_dir="../dataset/" --clf="rf" --xdim=640 --ydim=640 --n_frames=30 --pre_type="none"`
 
-
-### Model Approach:
-
-- [NMF](https://github.com/dsp-uga/Team-thweatt-p2/wiki/Model-Approaches)
-- [Tiramisu](https://github.com/dsp-uga/Team-thweatt-p2/wiki/Future-Work)
-
 ## Ethics Considerations
-This project can be used as a part of a bigger project to detect and identify the effects of Cilia movement/changes that can be used for future Medical Research. This project was trained on Medical images and should only be used for detecting cilia movement from the video pipeline. 
+This project can be used as a part of a bigger study on the efficacy of new drugs on inhibiting certain types of cross-synaptic activity for the treatment of neurological disorders. With this context in mind, we have undertaken certain ethics considerations to ensure that this project cannot be misused for purposes other than the ones intended.
 
-[LICENSE](https://github.com/dsp-uga/Team-keller/blob/master/ETHICS)
-
-[![Deon badge](https://img.shields.io/badge/ethics%20checklist-deon-brightgreen.svg?style=popout-square)](http://deon.drivendata.org/)
+See the [ETHICS.md](https://github.com/dsp-uga/team-keller/blob/master/ETHICS.md) file for details.
+Also see the [Wiki Ethics page](https://github.com/dsp-uga/Team-keller/wiki/Ethics) for explanations about the ethics considerations.
 
 ## Contributing
 
@@ -81,10 +75,9 @@ If you see something that can be improved, please send us a pull request!
 - **Sumer Singh**
 - **Yang Shi** 
 
-
 See the [CONTRIBUTORS.md](https://github.com/dsp-uga/team-keller/blob/master/CONTRIBUTORS.md) file for details.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/dsp-uga/Team-thweatt-p2/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/dsp-uga/Team-keller/blob/master/LICENSE) file for details
 
