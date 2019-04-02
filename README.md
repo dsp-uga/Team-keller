@@ -43,7 +43,7 @@ Download these files into your project directory using gsutil:<br />
 
 data  
 --neurofinder.00.00.test <br />
-  |--images <br />
+ &nbsp;|--images <br />
 --neurofinder.00.01.test <br />
   |--images <br />
 ........... <br />
