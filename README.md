@@ -33,30 +33,58 @@ Training datasets are provided with ground truth labeled regions for identified 
 Download these files into your project directory using gsutil:<br />
 `gsutil cp -r gs://uga-dsp/project3/* base_dir`
 
-### Run Instruction:
+### Scripts:
+	
+## contrast.py
 
-You can download the source code and simply run the following command:
+* Perfroms contrast enhacement, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Pre-Processing). 
+* Create a data folder containing the neurofinder data.
+* Input data should follow the below structure:
 
-`$ python3 main.py --base_dir /path/to/project/directory/`
+data  
+--neurofinder.00.00.test <br />
+--|--images <br />
+--neurofinder.00.01.test <br />
+--|--images <br />
+........... <br />
+........... <br />
+--neurofinder.xx.xx.test <br />
+--|--images <br />
 
-List of command line arguments to pass to the program are as follows:
+* Output data will follow the below structure:
 
-	--base_dir: absolute project directory path.
-	--clf: type of classifier to use. Current choices are 'rf' and 'svm'.
-	--xdim: width of the images after preprocessing.
-	--ydim: length of the images after preprocessing.
-	--n_frames: number of the frames per video to consider.
-	--pre_type: type of preprocessing. Choices are 'none', 'resize', or 'zero'.
+edited_data <br />
+--neurofinder.00.00.test <br />
+--|--images <br />
+--neurofinder.00.01.test <br />
+--|--images <br />
+........... <br />
+........... <br />
+--neurofinder.xx.xx.test <br />
+--|--images <br />
 
-The only reqired argument is the `base_dir` which is the directory containing `train_file`, `test_file`, `data\`, and `masks\`.
+## nmf.py
 
-Then see the above list in command line to execute the following command:
+* Perfroms nmf, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Model-Approaches).
+* Follow the data format given above.
 
-`$ python3 main.py -h`
+### To run
+`nmf.py -d \<data directory>\ -k \<num_components>\ -p \<percentile>\ -m \<max_iter>\ -o \<overlap>\ `
 
-One typical usage is:
+Required parameters:
 
-`$ python3 main.py --base_dir="../dataset/" --clf="rf" --xdim=640 --ydim=640 --n_frames=30 --pre_type="none"`
+`<data directory>` Path to the data folder created as per the specifictions.
+
+Optional parameters:
+
+`<num_components>` The number of components to estimate per block. Defaults to 5.
+
+`<percentile>` The value for thresholding. Defaults to 90.
+
+`<max_iter>` The maximum number of algorithm iterations. Defaults to 20.
+
+`<overlap>` The value for determining whether to merge. Defaults to 0.1.
+
 
 ## Ethics Considerations
 This project can be used as a part of a bigger study on the efficacy of new drugs on inhibiting certain types of cross-synaptic activity for the treatment of neurological disorders. With this context in mind, we have undertaken certain ethics considerations to ensure that this project cannot be misused for purposes other than the ones intended.
