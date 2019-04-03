@@ -27,7 +27,7 @@ def increase_contrast(
         Path to output folder.
     var_upper_bound: Int
         The upper threshold for clipping value.
-    var_lower_bound : List
+    var_lower_bound : Int
         The lower threshold for clipping value.
     """
 
