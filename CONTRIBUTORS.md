@@ -2,9 +2,8 @@
 (Ordered alphabetically)
 
 - **Dhaval Bhanderi** - [dvlbhanderi](https://github.com/dvlbhanderi)
-   - 
-   - 
-   - 
+   - Implemented UNets.
+   - Contributed to Ethics, Readme and Wiki
    
 - **Hemanth Dandu** - [hemanthme22](https://github.com/hemanthme22)
     - Complete documentation and ethics
