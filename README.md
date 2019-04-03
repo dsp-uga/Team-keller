@@ -101,6 +101,10 @@ Optional parameters:
 
 `<overlap>` The value for determining whether to merge. Defaults to 0.1.
 
+Output:
+
+The program will output `submission.json` in the given data folder.
+
 
 ## Ethics Considerations
 This project can be used as a part of a bigger study on the efficacy of new drugs on inhibiting certain types of cross-synaptic activity for the treatment of neurological disorders. With this context in mind, we have undertaken certain ethics considerations to ensure that this project cannot be misused for purposes other than the ones intended.
