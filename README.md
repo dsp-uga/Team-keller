@@ -37,7 +37,7 @@ Download these files into your project directory using gsutil:<br />
 	
 ### contrast.py
 
-* Perfroms contrast enhacement, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Pre-Processing). 
+* Perfroms contrast enhacement, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Pre--Processing). 
 * Create a data folder containing the neurofinder data.
 * Input data should follow the below structure:
 
