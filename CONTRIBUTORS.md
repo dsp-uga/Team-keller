@@ -7,9 +7,9 @@
    - 
    
 - **Hemanth Dandu** - [hemanthme22](https://github.com/hemanthme22)
-    - 
-    - 
-    - 
+    - Complete documentation and ethics
+    - Parameter tuning in NMF model
+    - Uploaded results to Autolab
 
 - **Sumer Singh** - [srs96](https://github.com/srs96)
    - Implemented and tuned NMF model
