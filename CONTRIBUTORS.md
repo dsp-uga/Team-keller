@@ -16,9 +16,8 @@
    - Contributed to Ethics, Readme and Wiki
    
 - **Yang Shi** - [YangAzure](https://github.com/YangAzure)
-   - 
-   - 
-   - 
+   - Implemented tiramisu.
+   - Contributed to Ethics, Readme and Wiki.
    
 
   
