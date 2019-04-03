@@ -33,9 +33,9 @@ Training datasets are provided with ground truth labeled regions for identified 
 Download these files into your project directory using gsutil:<br />
 `gsutil cp -r gs://uga-dsp/project3/* base_dir`
 
-### Scripts:
+## Scripts
 	
-## contrast.py
+### contrast.py
 
 * Perfroms contrast enhacement, as outlined [here](https://github.com/dsp-uga/Team-keller/wiki/Pre-Processing). 
 * Create a data folder containing the neurofinder data.
